@@ -8,6 +8,20 @@ export default function CartSidebar() {
   const { items, removeItem, updateQuantity, getTotal } = useCart()
   const [isOpen, setIsOpen] = useState(false)
 
+  // Listen for body class changes to open/close sidebar
+  useEffect(() => {
+    const checkCartOpen = () => {
+      const isCartOpen = document.body.classList.contains('cart-open')
+      setIsOpen(isCartOpen)
+    }
+
+    // Check initially and set up interval to detect changes
+    checkCartOpen();
+    const interval = setInterval(checkCartOpen, 100);
+
+    return () => clearInterval(interval);
+  }, [])
+
   const closeCart = () => {
     document.body.classList.remove('cart-open')
     setIsOpen(false)

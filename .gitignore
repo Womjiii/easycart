@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build
+dist/
+build/
+
+# Testing
+coverage/
+
+# Misc
+.DS_Store
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

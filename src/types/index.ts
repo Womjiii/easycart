@@ -1,7 +1,7 @@
 // Database Types based on database.sql schema
 
 export interface User {
-  id: number;
+  id: string | number;
   name: string;
   email: string;
   password?: string;
